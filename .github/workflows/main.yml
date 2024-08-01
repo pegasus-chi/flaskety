@@ -1,0 +1,26 @@
+name: Build and deploy to github pages
+on:
+  push:
+    branches: [ master ] # Change this to the branch you want to have build every push
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      
+      - name: Install dependencies and build
+        run: |
+          pip install -r requirements.txt
+          flask freeze
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          BRANCH: gh-pages
+          FOLDER: build
+          CLEAN: true
