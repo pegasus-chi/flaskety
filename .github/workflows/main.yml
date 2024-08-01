@@ -21,7 +21,7 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@65b5dfd4f5bcd3a7403bbc2959c144256167464e
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.FLASKETY }}
           branch: gh-pages
           folder: build
           clean: true
