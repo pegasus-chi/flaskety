@@ -18,3 +18,4 @@ SOCIAL_LINKS:
   github: username
 GOOGLE_ANALYTICS: ~
 DISQUS_SHORTNAME: ~
+FREEZER_BASE_URL: https://pegasus-chi.github.io/flaskety/
